@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascrift-problem-solve</title>
+</head>
+<body>
+	<script>
+	   dayTime();
+	   CurrentDate();
+	   function dayTime() {
+		   	var today = new Date();
+		   var day = today.getDay();
+		   var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+		   document.write("Today is :" + daylist[day] + "."+ "<br>");
+		   var hour =today.getHours();
+		   var minute = today.getMinutes();
+		   var second = today.getSeconds();
+		   var amOrPm = (hour>=12)? "PM":"AM";
+		   hour= (hour>=12)? hour-12: hour;
+		   if (hour===0 && amOrPm==='PM'){
+		   if (minute===0 && second===0){
+		   hour=12;
+		   amOrPm='Noon';
+		   }
+		   else{
+		   hour=12;
+		   amOrPm= 'PM'
+		   }
+		   }
+		   
+		   if (hour===0 && amOrPm==='AM') {
+		   if (minute===0 && second===0){
+		   hour=12;
+		   amOrPm='Midnight';
+		   }
+		   else{
+		   hour=12;
+		   amOrPm= 'AM'
+		   }
+		   }
+		   document.write('Curent Time : '+ hour+" "+amOrPm+" : "+minute+" : "+second+"<br>");
+	   }
+
+	   function CurrentDate() {
+        var today= new Date();
+        var day= today.getDay();
+        var dd= today.getDate();
+        var arrymm= today.getMonth();
+        var mm = today.getMonth() +1;
+        var mmList= ["Janunary","February","March","April","May","June","July","August","September","October","November","December"];
+        var monthName= (mmList[arrymm]);
+        var yyyy= today.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        }
+        if (mm<10) {
+            mm='0'+mm;
+        }
+        today= dd+ " " +monthName+ " " +yyyy;
+        document.write(today);
+	   	
+	   }
+</script>
+
+</body>
+</html>
